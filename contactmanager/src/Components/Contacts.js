@@ -17,21 +17,26 @@ class Contacts extends Component {
   };
 
   render() {
-    const { contacts } = this.state;
-
     return (
-      <React.Fragment>
-        {contacts.map(contact => (
-          <Contact
-            key={contact.id}
-            // name={contact.name}  // if we need individual values
-            // email={contact.email}  // if we need individual values
-            // phone={contact.phone}  // if we need individual values
-            contact={contact}
-            deleteClickHandler={this.deleteContact.bind(this, contact.id)}
-          />
-        ))}
-      </React.Fragment>
+      <Consumer>
+        {value => {
+          const { contacts } = value;
+          return (
+            <React.Fragment>
+              {value.contacts.map(contact => (
+                <Contact
+                  key={contact.id}
+                  // name={contact.name}  // if we need individual values
+                  // email={contact.email}  // if we need individual values
+                  // phone={contact.phone}  // if we need individual values
+                  contact={contact}
+                  deleteClickHandler={this.deleteContact.bind(this, contact.id)}
+                />
+              ))}
+            </React.Fragment>
+          );
+        }}
+      </Consumer>
     );
   }
 }
