@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Consumer } from "../context";
 // import "./contact.css";
 
 class Contact extends Component {
@@ -34,9 +35,7 @@ class Contact extends Component {
   state = {
     showConctactInfo: true
   };
-  onDeleteClick = () => {
-    this.props.deleteClickHandler();
-  };
+  onDeleteClick = () => {};
 
   render() {
     // const { name, email, phone } = this.props;
@@ -77,7 +76,6 @@ Contact.propTypes = {
   // name: PropTypes.string.isRequired, // this is optional if we are using single values from ./Contacts.js
   // email: PropTypes.string.isRequired, // this is optional if we are using single values from ./Contacts.js
   // phone: PropTypes.string.isRequired // this is optional if we are using single values from ./Contacts.js
-  contact: PropTypes.object.isRequired,
-  deleteClickHandler: PropTypes.func.isRequired
+  contact: PropTypes.object.isRequired
 };
 export default Contact;
