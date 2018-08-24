@@ -36,7 +36,9 @@ class Contact extends Component {
   state = {
     showConctactInfo: true
   };
-  onDeleteClick = (id, dispatch) => {};
+  onDeleteClick = (id, dispatch) => {
+    dispatch({ type: "DELETE_CONTACT", payload: id });
+  };
 
   render() {
     // const { name, email, phone } = this.props;
@@ -66,7 +68,7 @@ class Contact extends Component {
                 <i
                   className="fas fa-times"
                   style={{ cursor: "pointer", float: "right", color: "red" }}
-                  onClick={this.onDeleteClick}
+                  onClick={this.onDeleteClick.bind(this, id, dispatch)}
                 />
               </h4>
               {showContactInfo ? (
@@ -82,6 +84,7 @@ class Contact extends Component {
     );
   }
 }
+
 Contact.propTypes = {
   // name: PropTypes.string.isRequired, // this is optional if we are using single values from ./Contacts.js
   // email: PropTypes.string.isRequired, // this is optional if we are using single values from ./Contacts.js
