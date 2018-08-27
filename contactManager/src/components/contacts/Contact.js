@@ -34,7 +34,7 @@ class Contact extends Component {
   // }; // toggling state onClick wiht dedicated funcrtion
 
   state = {
-    showConctactInfo: true
+    showContactInfo: false
   };
   onDeleteClick = (id, dispatch) => {
     dispatch({ type: "DELETE_CONTACT", payload: id });
