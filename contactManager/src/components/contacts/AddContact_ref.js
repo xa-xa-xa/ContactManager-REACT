@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class AddContact extends Component {
   constructor(props) {
@@ -20,9 +20,9 @@ class AddContact extends Component {
   };
 
   static defaultProps = {
-    name: "Ivan Ivanovich",
-    email: "iivanovich@email.com",
-    phone: "666-666-6666"
+    name: 'Ivan Ivanovich',
+    email: 'iivanovich@email.com',
+    phone: '666-666-6666'
   };
 
   render() {
