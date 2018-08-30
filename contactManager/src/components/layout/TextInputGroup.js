@@ -5,7 +5,7 @@ import classnames from 'classnames';
 const TextInputGroup = ({
   label,
   name,
-  email,
+  // email,
   value,
   placeholder,
   type,
